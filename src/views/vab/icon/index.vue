@@ -1,11 +1,10 @@
 <template>
   <div class="icon-container">
-    <a-alert message="点击图标即可复制代码" type="success" show-icon></a-alert>
     <a-row :gutter="20">
       <a-col :span="24">
         <a-input-search
           v-model:value="queryForm.title"
-          placeholder="图标名称"
+          placeholder="Tìm kiếm icon"
           enter-button
           @search="queryData"
         />

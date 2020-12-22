@@ -16,41 +16,13 @@
         ></a-tab-pane>
       </a-tabs>
     </div>
-    <div class="vab-tabs-right-panel">
-      <a-dropdown>
-        <template v-slot:overlay>
-          <a-menu @click="handleClick">
-            <a-menu-item key="closeOthersTabs">
-              <a>关闭其他</a>
-            </a-menu-item>
-            <a-menu-item key="closeLeftTabs">
-              <a>关闭左侧</a>
-            </a-menu-item>
-            <a-menu-item key="closeRightTabs">
-              <a>关闭右侧</a>
-            </a-menu-item>
-            <a-menu-item key="closeAllTabs">
-              <a>关闭全部</a>
-            </a-menu-item>
-          </a-menu>
-        </template>
-        <a-button style="margin-left: 8px">
-          更多
-          <DownOutlined />
-        </a-button>
-      </a-dropdown>
-    </div>
   </div>
 </template>
 
 <script>
-  import { DownOutlined } from '@ant-design/icons-vue'
   import { mapActions, mapGetters } from 'vuex'
   export default {
     name: 'VabTabs',
-    components: {
-      DownOutlined,
-    },
     data() {
       return {
         affixTabs: [],

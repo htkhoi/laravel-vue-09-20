@@ -20,13 +20,14 @@ export const constantRoutes = [
     hidden: true,
   },
 ]
+
 export const asyncRoutes = [
   {
     path: '/',
     component: Layout,
     redirect: '/index',
     meta: {
-      title: '首页',
+      title: 'Dashboard',
       icon: 'home-4-line',
       affix: true,
     },
@@ -36,7 +37,7 @@ export const asyncRoutes = [
         name: 'Index',
         component: () => import('@/views/index'),
         meta: {
-          title: '首页',
+          title: 'Dashboard',
           icon: 'home-4-line',
           affix: true,
         },
@@ -49,76 +50,101 @@ export const asyncRoutes = [
     redirect: '/vab/table',
     alwaysShow: true,
     meta: {
-      title: '组件',
+      title: 'Quản lý gian hàng',
       icon: 'apps-line',
     },
     children: [
       {
-        path: 'table',
-        name: 'Table',
+        path: 'category',
+        name: 'Category',
         component: () => import('@/views/vab/table'),
         meta: {
-          title: '表格',
-          icon: 'table-2',
+          title: 'Danh mục sản phẩm',
+          icon: 'align-right',
         },
       },
       {
-        path: 'icon',
-        name: 'Icon',
+        path: 'product',
+        name: 'Product',
         component: () => import('@/views/vab/icon'),
         meta: {
-          title: '图标',
-          icon: 'remixicon-line',
+          title: 'Danh sách sản phẩm',
+          icon: 'align-right',
+        },
+      },
+      {
+        path: 'order',
+        name: 'Order',
+        component: () => import('@/views/vab/icon'),
+        meta: {
+          title: 'Đơn đặt hàng',
+          icon: 'align-right',
         },
       },
     ],
   },
   {
-    path: '/test',
+    path: '/slider',
     component: Layout,
-    redirect: '/test/test',
+    redirect: '/slider',
     meta: {
-      title: '动态路由测试',
-      icon: 'test-tube-line',
+      title: 'Dashboard',
+      icon: 'home-4-line',
+      affix: true,
     },
     children: [
       {
-        path: 'test',
-        name: 'Test',
-        component: () => import('@/views/test'),
+        path: 'index',
+        name: 'Slider',
+        component: () => import('@/views/index'),
         meta: {
-          title: '动态路由测试',
-          icon: 'test-tube-line',
+          title: 'Quản lý slider',
+          icon: 'apps-line',
+          affix: true,
         },
       },
     ],
   },
   {
-    path: '/error',
-    name: 'Error',
+    path: '/user',
     component: Layout,
-    redirect: '/error/403',
+    redirect: '/user',
     meta: {
-      title: '错误页',
-      icon: 'error-warning-line',
+      title: 'Quản lý người dùng',
+      icon: 'home-4-line',
+      affix: true,
     },
     children: [
       {
-        path: '403',
-        name: 'Error403',
-        component: () => import('@/views/403'),
+        path: 'index',
+        name: 'User',
+        component: () => import('@/views/index'),
         meta: {
-          title: '403',
-          icon: 'error-warning-line',
+          title: 'Quản lý người dùng',
+          icon: 'apps-line',
+          affix: true,
         },
       },
+    ],
+  },
+  {
+    path: '/setting',
+    component: Layout,
+    redirect: '/setting',
+    meta: {
+      title: 'Cài đặt chung',
+      icon: 'home-4-line',
+      affix: true,
+    },
+    children: [
       {
-        path: '404',
-        name: 'Error404',
-        component: () => import('@/views/404'),
+        path: 'index',
+        name: 'Setting',
+        component: () => import('@/views/index'),
         meta: {
-          title: '404',
-          icon: 'error-warning-line',
+          title: 'Cài đặt chung',
+          icon: 'apps-line',
+          affix: true,
         },
       },
     ],

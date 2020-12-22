@@ -4,8 +4,6 @@
       <a-col :xs="0" :md="0" :sm="12" :lg="14" :xl="16"></a-col>
       <a-col :xs="24" :sm="24" :md="12" :lg="10" :xl="6">
         <div class="login-container-form">
-          <div class="login-container-hello">hello!</div>
-          <div class="login-container-title">Login {{ title }}</div>
           <a-form :model="form" @submit="handleSubmit" @submit.prevent>
             <a-form-item>
               <a-input v-model:value="form.username" placeholder="Username">
@@ -31,18 +29,13 @@
                 html-type="submit"
                 :disabled="form.username === '' || form.password === ''"
               >
-                Useername
+                Đăng nhập
               </a-button>
             </a-form-item>
           </a-form>
         </div>
       </a-col>
     </a-row>
-    <div class="login-container-tips">
-      基于vue{{ dependencies['vue'] }}
-      + ant-design-vue
-      {{ dependencies['ant-design-vue'] }}开发
-    </div>
   </div>
 </template>
 <script>
