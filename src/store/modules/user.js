@@ -1,7 +1,4 @@
-/**
- * @author chuzhixin 1204505056@qq.com
- * @description 登录、获取用户信息、退出登录、清除accessToken逻辑，不建议修改
- */
+
 import { getUserInfo, login, logout } from '@/api/user'
 import {
   getAccessToken,
@@ -85,11 +82,11 @@ const actions = {
           ? '下午好'
           : '晚上好'
       notification.open({
-        message: `欢迎登录${title}`,
-        description: `${thisTime}！`,
+        message: `Đăng nhập thành công!`,
+        description: ``,
       })
     } else {
-      message.error(`登录接口异常，未正确返回${tokenName}...`)
+      message.error(`Lỗi đăng nhập${tokenName}...`)
     }
   },
   /**
@@ -145,4 +142,5 @@ const actions = {
     commit('setAccessToken', accessToken)
   },
 }
+
 export default { state, getters, mutations, actions }

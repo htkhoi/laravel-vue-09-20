@@ -6,7 +6,7 @@
         <div class="login-container-form">
           <a-form :model="form" @submit="handleSubmit" @submit.prevent>
             <a-form-item>
-              <a-input v-model:value="form.username" placeholder="Username">
+              <a-input v-model:value="form.username" placeholder="Email">
                 <template v-slot:prefix>
                   <UserOutlined style="color: rgba(0, 0, 0, 0.25)" />
                 </template>
@@ -39,7 +39,6 @@
   </div>
 </template>
 <script>
-  import { dependencies, devDependencies } from '*/package.json'
   import { mapActions, mapGetters } from 'vuex'
   import { UserOutlined, LockOutlined } from '@ant-design/icons-vue'
 
@@ -56,8 +55,6 @@
           password: '',
         },
         redirect: undefined,
-        dependencies: dependencies,
-        devDependencies: devDependencies,
       }
     },
     computed: {
@@ -74,21 +71,13 @@
         immediate: true,
       },
     },
-    mounted() {
-      this.form.username = 'admin'
-      this.form.password = '123456'
-      /*  setTimeout(() => {
-        this.handleSubmit()
-      }, 3000) */
-    },
     methods: {
       ...mapActions({
         login: 'user/login',
       }),
       handleRoute() {
         return this.redirect === '/404' || this.redirect === '/403'
-          ? '/'
-          : this.redirect
+          ? '/' : this.redirect
       },
       async handleSubmit() {
         await this.login(this.form)

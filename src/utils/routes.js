@@ -4,12 +4,6 @@ import { rolesControl } from '@/config'
 import { isExternal } from '@/utils/validate'
 import { hasRole } from '@/utils/hasRole'
 
-/**
- * @author chuzhixin 1204505056@qq.com
- * @description all模式渲染后端返回路由
- * @param constantRoutes
- * @returns {*}
- */
 export function convertRouter(constantRoutes) {
   return constantRoutes.map((route) => {
     if (route.component) {
@@ -42,13 +36,6 @@ export function convertRouter(constantRoutes) {
   })
 }
 
-/**
- * @author chuzhixin 1204505056@qq.com
- * @description 根据roles数组拦截路由
- * @param routes
- * @param baseUrl
- * @returns {[]}
- */
 export function filterRoutes(routes, baseUrl = '/') {
   return routes
     .filter((route) => {
@@ -66,10 +53,6 @@ export function filterRoutes(routes, baseUrl = '/') {
     })
 }
 
-/**
- * 根据当前页面firstMenu
- * @returns {string}
- */
 export function handleFirstMenu() {
   const firstMenu = router.currentRoute.matched[0].path
   if (firstMenu === '') return '/'

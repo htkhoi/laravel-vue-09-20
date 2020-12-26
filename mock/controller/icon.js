@@ -2269,6 +2269,7 @@ const data = [
   'zzz-fill',
   'zzz-line',
 ]
+
 module.exports = [
   {
     url: '/icon/getList',

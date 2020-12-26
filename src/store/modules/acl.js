@@ -3,11 +3,13 @@ const state = () => ({
   role: [],
   ability: [],
 })
+
 const getters = {
   admin: (state) => state.admin,
   role: (state) => state.role,
   ability: (state) => state.ability,
 }
+
 const mutations = {
   setFull(state, admin) {
     state.admin = admin
@@ -19,6 +21,7 @@ const mutations = {
     state.ability = ability
   },
 }
+
 const actions = {
   setFull({ commit }, admin) {
     commit('setFull', admin)
@@ -30,4 +33,5 @@ const actions = {
     commit('setAbility', ability)
   },
 }
+
 export default { state, getters, mutations, actions }

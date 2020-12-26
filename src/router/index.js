@@ -5,6 +5,9 @@ export const constantRoutes = [
   {
     path: '/login',
     component: () => import('@/views/login'),
+    meta: {
+      title: 'Đăng nhập',
+    },
     hidden: true,
   },
   {
@@ -155,6 +158,7 @@ export const asyncRoutes = [
     hidden: true,
   },
 ]
+
 const router = createRouter({
   history: createWebHashHistory(),
   routes: constantRoutes,

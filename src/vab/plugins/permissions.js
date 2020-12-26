@@ -1,10 +1,7 @@
-/**
- * @author chuzhixin 1204505056@qq.com
- * @description 路由守卫，目前两种模式：all模式与intelligence模式
- */
 import router from '@/router'
 import store from '@/store'
 import getPageTitle from '@/utils/pageTitle'
+
 import {
   authentication,
   loginInterception,

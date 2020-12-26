@@ -1,9 +1,9 @@
-/**
- * @description 导出自定义配置
- **/
 const config = {
-  layout: 'vertical',
-  donation: true,
-  templateFolder: 'project',
+	title: 'SUNTECH VIỆT NAM',
+  	layout: 'vertical',
+  	donation: true,
+  	templateFolder: 'project',
+  	useEslint: false,
 }
+
 module.exports = config

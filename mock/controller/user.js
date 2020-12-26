@@ -10,16 +10,18 @@ module.exports = [
     type: 'post',
     response(config) {
       const { username } = config.body
-      const accessToken = accessTokens[username]
+      const accessToken = accessTokens.admin
+
       if (!accessToken) {
         return {
           code: 500,
-          msg: '帐户或密码不正确。',
+          msg: 'Đăng nhập thất bại',
         }
       }
+
       return {
         code: 200,
-        msg: 'success',
+        msg: 'Đăng nhập thành công',
         data: { accessToken },
       }
     },

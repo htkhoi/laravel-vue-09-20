@@ -2,11 +2,13 @@ import request from '@/utils/request'
 import { tokenName } from '@/config'
 
 export async function login(data) {
-  return request({
+  let result = request({
     url: '/login',
     method: 'post',
     data,
   })
+
+  return result;
 }
 
 export async function socialLogin(data) {

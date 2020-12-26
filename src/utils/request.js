@@ -7,6 +7,7 @@ import {
   successCode,
   tokenName,
 } from '@/config'
+
 import store from '@/store'
 import qs from 'qs'
 import router from '@/router'
@@ -15,12 +16,6 @@ import { message } from 'ant-design-vue'
 
 let loadingInstance
 
-/**
- * @author chuzhixin 1204505056@qq.com
- * @description 处理code异常
- * @param {*} code
- * @param {*} msg
- */
 const handleCode = (code, msg) => {
   switch (code) {
     case 401:
@@ -48,10 +43,7 @@ const instance = axios.create({
   },
 })
 
-/**
- * @author chuzhixin 1204505056@qq.com
- * @description axios请求拦截器
- */
+
 instance.interceptors.request.use(
   (config) => {
     if (store.getters['user/accessToken'])
